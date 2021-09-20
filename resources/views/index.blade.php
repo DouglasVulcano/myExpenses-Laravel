@@ -33,8 +33,8 @@
     </div>
 </div> <!-- Informações -->
 
-<div class="container-fluid tip-app"> <!-- Tips -->
-    <div class="container" id="info">
+<div class="container-fluid tip-app" id="info"> <!-- Tips -->
+    <div class="container">
         <h1 class="tip-app-title"><ion-icon name="chatbubbles-outline"></ion-icon> Dicas para economizar dinheiro.</h1>
         <p class="tip-app-p">Economizar é uma tarefa importante e que precisa ser cumprida da melhor maneira possível. Mas como fazer isso sem prejudicar o seu padrão de vida? Confira algumas dicas!</p>
 
