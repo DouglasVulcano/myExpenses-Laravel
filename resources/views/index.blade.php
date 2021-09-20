@@ -11,7 +11,7 @@
                     <a href="#info" class="btn btn-outline-dark form-control mt-1 mb-1">Saiba mais</a>
                 </div>
                 <div class="col-md-6">
-                    <a href="" class="btn btn-outline-dark form-control mt-1 mb-1">Comece já!</a>
+                    <a href="/login" class="btn btn-outline-dark form-control mt-1 mb-1">Comece já!</a>
                 </div>
             </div>
         </div>
@@ -37,7 +37,6 @@
     <div class="container">
         <h1 class="tip-app-title"><ion-icon name="chatbubbles-outline"></ion-icon> Dicas para economizar dinheiro.</h1>
         <p class="tip-app-p">Economizar é uma tarefa importante e que precisa ser cumprida da melhor maneira possível. Mas como fazer isso sem prejudicar o seu padrão de vida? Confira algumas dicas!</p>
-
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">

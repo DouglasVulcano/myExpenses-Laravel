@@ -27,21 +27,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><ion-icon name="log-in-outline"></ion-icon> Log In</a>
+                    <a class="nav-link" href="/login"><ion-icon name="log-in-outline"></ion-icon> Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cadastre-se</a>
+                    <a class="nav-link" href="/register">Cadastre-se</a>
                 </li>
+                @endguest
+                @auth
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><ion-icon name="log-out-outline"></ion-icon> Log Out</a>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <a class="nav-link" href="/logout"><ion-icon name="log-out-outline" onclick="event.preventDefault(); this.closest('form').submit();"></ion-icon> Log Out</a>
+                    </form>
                 </li>
+                @endauth
             </ul>
         </div>
     </div>
