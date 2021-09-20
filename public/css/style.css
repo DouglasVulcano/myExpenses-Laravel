@@ -1,0 +1,56 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+}
+
+/* Banner */
+.banner-app {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+/* Informações */
+.info-app {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    background-color: rgb(39, 114, 89);
+}
+.info-app-card {
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    border-left: 6px solid orange;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.info-app-card:hover {
+    transition: .5s;
+    background-color: rgb(197, 197, 197);
+}
+.info-app-title {
+    padding-top: 30px;
+}
+.info-app-p {
+    padding: 10px;
+    text-align: justify;
+}
+
+/* Tips */
+.tip-app {
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+.tip-app-p {
+    text-align: justify;
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+}
+#footer p {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
