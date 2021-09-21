@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 /* Banner */
 .banner-app {
     padding-top: 100px;
@@ -49,10 +50,10 @@
 /***** DASHBOARD **********/
 .banner-dashboard {
     padding-top: 30px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
 }
 .dashboard-title {
-    padding: 10px;
+    padding: 9px;
     font-size: 20px;
     color: white;
     background-color: rgb(36, 36, 36);
@@ -75,7 +76,7 @@
 .expense-title {
     background-color: rgb(39, 114, 89);
     color: white; 
-    font-size: 20px;
+    font-size: 18px;
     padding: 3px;
     
     border-radius: 3px;
@@ -89,7 +90,8 @@
 /** Edit Dashboard **/
 .edit-dashboard {
     padding-top: 30px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
+
 }
 
 /* Footer */

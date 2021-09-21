@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Expense;
+use App\Models\User;
 
 class ExpenseController extends Controller
 {
@@ -14,13 +15,25 @@ class ExpenseController extends Controller
     public function dashboard() {
         $user = auth()->user();
 
-        $expenses = $user->expenses;
-
         $userName = $user->name;
+
+        $expenses = $user->expenses;
+        
+        /** Quantidade de Despesas */
+        $totalExpenses = count($expenses);
+
+        /** Gasto total */
+        $qtdTotal = 0;
+        foreach ($expenses as $values) {
+            $qtdTotal += $values->price;
+        }
+        
 
         return view('expenses.dashboard', [
                                             'userName' => $userName,
-                                            'expenses' => $expenses
+                                            'expenses' => $expenses,
+                                            'totalExpenses' => $totalExpenses,
+                                            'qtdTotal' => $qtdTotal
                                             ]);
     }
 
@@ -52,7 +65,9 @@ class ExpenseController extends Controller
     }
 
     public function update(Request $request) {
+
         Expense::findOrFail($request->id)->update($request->all());
+
 
         return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
     }

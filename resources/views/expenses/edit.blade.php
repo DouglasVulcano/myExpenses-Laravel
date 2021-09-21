@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container col-md-6 edit-dashboard"> <!-- Edit -->
-    <h1>Editando a despesa: {{$expense->expenseTitle}}</h1>
+    <h1 class="dashboard-title"><ion-icon name="create-outline"></ion-icon> Editando: {{$expense->expenseTitle}}</h1>
     <form action="/expenses/update/{{$expense->id}}" method="post">
         @csrf
         @method('PUT')
@@ -14,9 +14,11 @@
         <div class="mb-3">
             <label for="type" class="form-label">Tipo</label>
             <select class="form-select" id="type" name="type">
+                <option selected><strong>Escolha o tipo de despesa</strong></option>
                 <option value="Alimentação">Alimentação</option>
                 <option value="Aluguel">Aluguel</option>
                 <option value="Condomínio">Condomínio</option>
+                <option value="Contas">Contas</option>
                 <option value="Conta de água">Conta de água</option>
                 <option value="Conta de luz">Conta de luz</option>
                 <option value="Combustível">Combustível</option>

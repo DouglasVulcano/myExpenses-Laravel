@@ -11,13 +11,17 @@
 
         <div class="col-md-10"> <!-- Menu Principal -->
             <div class="row">
+
                 <div class="col-md-8">
-                   <h1 class="dashboard-title">Graficos</h1>
+                   <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Análise</h1>
+                   <h1>{{$totalExpenses}}</h1>
+                   <h1>{{$qtdTotal}}</h1>
                 </div>
+
                 <div class="col-md-4">
-                    <h1 class="dashboard-title">Meus Gastos</h1>
+                    <h1 class="dashboard-title"><ion-icon name="list-circle-outline"></ion-icon> Meus Gastos</h1>
                     @foreach($expenses as $expense)
-                    <div class="expense">
+                    <div class="expense mb-2">
                         <h1 class="expense-title"><ion-icon name="chevron-forward-outline"></ion-icon>{{$expense->expenseTitle}}</h1>
                         <div class="row">
                             <div class="col-lg-8">
@@ -42,6 +46,9 @@
                         </div>
                     </div>
                     @endforeach
+                    @if(count($expenses) == 0)
+                    <p>Não há despesas cadastradas.</p>
+                    @endif
                 </div>
             </div>
         </div> <!-- Menu Principal -->
@@ -67,9 +74,11 @@
                 <div class="mb-3">
                     <label for="type" class="form-label">Tipo</label>
                     <select class="form-select" id="type" name="type" required>
+                        <option selected><strong>Escolha o tipo de despesa</strong></option>
                         <option value="Alimentação">Alimentação</option>
                         <option value="Aluguel">Aluguel</option>
                         <option value="Condomínio">Condomínio</option>
+                        <option value="Contas">Contas</option>
                         <option value="Conta de água">Conta de água</option>
                         <option value="Conta de luz">Conta de luz</option>
                         <option value="Combustível">Combustível</option>

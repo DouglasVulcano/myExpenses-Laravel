@@ -59,7 +59,7 @@
 <div class="container-fluid bg-dark text-light" id="footer">
     <div class="row">
         <div class="col-md-6">
-            <p class="mt-3 mb-3">My Expeneses &copy; @php echo date('Y') @endphp</p>
+            <p class="mt-3 mb-3">My Expenses &copy; @php echo date('Y') @endphp</p>
         </div>
         <div class="col-md-6">
             <p class="mt-3 mb-3">Desenvolvido por: <strong>Douglas Vulcano</strong></p>
