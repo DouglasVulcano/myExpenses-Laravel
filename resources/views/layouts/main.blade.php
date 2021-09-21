@@ -45,7 +45,7 @@
                 <li class="nav-item">
                     <form action="/logout" method="post">
                         @csrf
-                        <a class="nav-link" href="/logout"><ion-icon name="log-out-outline" onclick="event.preventDefault(); this.closest('form').submit();"></ion-icon> Log Out</a>
+                        <a class="nav-link" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();"><ion-icon name="log-out-outline" ></ion-icon> Log Out</a>
                     </form>
                 </li>
                 @endauth

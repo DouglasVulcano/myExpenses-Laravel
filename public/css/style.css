@@ -46,6 +46,21 @@
     text-align: justify;
 }
 
+/***** DASHBOARD **********/
+.banner-dashboard {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.aside-dashboard {
+    background-color: rgb(36, 36, 36);
+}
+.aside-title {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+
 /* Footer */
 #footer {
     text-align: center;
