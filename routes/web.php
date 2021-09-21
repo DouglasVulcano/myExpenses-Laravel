@@ -20,3 +20,5 @@ Route::get('/', [ExpenseController::class, 'index']);
 Route::get('/dashboard', [ExpenseController::class, 'dashboard'])->middleware('auth');
 Route::post('/expenses', [ExpenseController::class, 'store'])->middleware('auth');
 Route::delete('/expenses/{id}', [ExpenseController::class, 'destroy'])->middleware('auth');
+Route::get('/expenses/edit/{id}', [ExpenseController::class, 'edit'])->middleware('auth');
+Route::put('/expenses/update/{id}', [ExpenseController::class, 'update'])->middleware('auth');

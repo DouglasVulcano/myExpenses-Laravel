@@ -4,7 +4,6 @@
 @section('content')
 <div class="container-fluid banner-dashboard"> <!-- Dashboard -->
     <div class="row">
-
         <div class="col-md-2 text-light aside-dashboard"> <!-- Aside -->
             <h5 class="aside-title"><ion-icon name="person-outline"></ion-icon> {{$userName}}</h5>
             <a href="/expenses/create" class="btn btn-outline-light form-control mb-1" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
@@ -30,7 +29,7 @@
                             </div>
                             <div class="col-lg-4" id="actions">
                                 <div class="col-md-12 mb-1">
-                                    <a href="#" class="btn btn-outline-primary btn-sm form-control">Editar</a>
+                                    <a href="/expenses/edit/{{$expense->id}}" class="btn btn-outline-primary btn-sm form-control">Editar</a>
                                 </div>
                                 <div class="col-md-12">
                                     <form action="/expenses/{{$expense->id}}" method="post">
@@ -41,6 +40,7 @@
                                 </div>
                             </div> 
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>

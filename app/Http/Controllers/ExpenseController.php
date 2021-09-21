@@ -51,6 +51,17 @@ class ExpenseController extends Controller
         return redirect('/dashboard');
     }
 
+    public function update(Request $request) {
+        Expense::findOrFail($request->id)->update($request->all());
+
+        return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
+    }
+
+    public function edit($id) {
+        $expense = Expense::findOrFail($id);
+        return view('expenses.edit', ['expense' => $expense]);
+    }
+
     public function destroy($id) {
         Expense::findOrFail($id)->delete();
         return redirect('/dashboard');
