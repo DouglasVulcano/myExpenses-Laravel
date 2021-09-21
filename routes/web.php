@@ -19,4 +19,4 @@ Route::get('/', [ExpenseController::class, 'index']);
 
 Route::get('/dashboard', [ExpenseController::class, 'dashboard'])->middleware('auth');
 Route::post('/expenses', [ExpenseController::class, 'store'])->middleware('auth');
-
+Route::delete('/expenses/{id}', [ExpenseController::class, 'destroy'])->middleware('auth');

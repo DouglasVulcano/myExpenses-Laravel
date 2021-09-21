@@ -50,4 +50,9 @@ class ExpenseController extends Controller
 
         return redirect('/dashboard');
     }
+
+    public function destroy($id) {
+        Expense::findOrFail($id)->delete();
+        return redirect('/dashboard');
+    }
 }

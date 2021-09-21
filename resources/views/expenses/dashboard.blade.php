@@ -30,19 +30,21 @@
                             </div>
                             <div class="col-lg-4" id="actions">
                                 <div class="col-md-12 mb-1">
-                                    <a href="#" class="btn btn-outline-primary form-control">Editar</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm form-control">Editar</a>
                                 </div>
                                 <div class="col-md-12">
-                                    <a href="#" class="btn btn-outline-danger form-control">Excluir</a>
+                                    <form action="/expenses/{{$expense->id}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger btn-sm form-control">Excluir</button>
+                                    </form>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
         </div> <!-- Menu Principal -->
-
     </div>
 </div> <!-- Dashboard -->
 

@@ -75,7 +75,7 @@
 .expense-title {
     background-color: rgb(39, 114, 89);
     color: white; 
-    font-size: 23px;
+    font-size: 20px;
     padding: 3px;
     
     border-radius: 3px;
@@ -83,7 +83,9 @@
 .expense-info {
     list-style: none;
     margin-left: -15px;
+    font-size: 14px;
 }
+
 
 
 /* Footer */
