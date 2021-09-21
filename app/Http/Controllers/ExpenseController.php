@@ -14,7 +14,7 @@ class ExpenseController extends Controller
     public function dashboard() {
         $user = auth()->user();
 
-        $expenses = Expense::all();
+        $expenses = $user->expenses;
 
         $userName = $user->name;
 
@@ -40,7 +40,7 @@ class ExpenseController extends Controller
 
 
         $expense->user_id = $user->id;
-        
+
         $expense->expenseTitle = $request->expenseTitle;
         $expense->price = $request->price;
         $expense->date = $request->date;

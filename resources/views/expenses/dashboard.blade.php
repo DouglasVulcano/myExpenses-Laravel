@@ -5,15 +5,44 @@
 <div class="container-fluid banner-dashboard"> <!-- Dashboard -->
     <div class="row">
 
-
         <div class="col-md-2 text-light aside-dashboard"> <!-- Aside -->
             <h5 class="aside-title"><ion-icon name="person-outline"></ion-icon> {{$userName}}</h5>
             <a href="/expenses/create" class="btn btn-outline-light form-control mb-1" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
         </div> <!-- Aside -->
 
         <div class="col-md-10"> <!-- Menu Principal -->
-            <h1>Dashboard!</h1>
+            <div class="row">
+                <div class="col-md-8">
+                   <h1 class="dashboard-title">Graficos</h1>
+                </div>
+                <div class="col-md-4">
+                    <h1 class="dashboard-title">Meus Gastos</h1>
+                    @foreach($expenses as $expense)
+                    <div class="expense">
+                        <h1 class="expense-title"><ion-icon name="chevron-forward-outline"></ion-icon>{{$expense->expenseTitle}}</h1>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <ul>    
+                                    <li class="expense-info"><ion-icon name="keypad-outline"></ion-icon> {{$expense->type}}</li>
+                                    <li class="expense-info"><ion-icon name="cash-outline"></ion-icon> R$ {{$expense->price}}</li>
+                                    <li class="expense-info"><ion-icon name="calendar-outline"></ion-icon> {{date('d/m/Y', strtotime($expense->date))}}</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4" id="actions">
+                                <div class="col-md-12 mb-1">
+                                    <a href="#" class="btn btn-outline-primary form-control">Editar</a>
+                                </div>
+                                <div class="col-md-12">
+                                    <a href="#" class="btn btn-outline-danger form-control">Excluir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div> <!-- Menu Principal -->
+
     </div>
 </div> <!-- Dashboard -->
 
@@ -38,6 +67,7 @@
                     <select class="form-select" id="type" name="type" required>
                         <option value="Alimentação">Alimentação</option>
                         <option value="Aluguel">Aluguel</option>
+                        <option value="Condomínio">Condomínio</option>
                         <option value="Conta de água">Conta de água</option>
                         <option value="Conta de luz">Conta de luz</option>
                         <option value="Combustível">Combustível</option>
@@ -48,7 +78,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Preço</label>
-                    <input type="number" class="form-control" id="price" name="price" required>
+                    <input type="number" class="form-control" id="price" name="price" step=".01" required>
                 </div>
                 <div class="mb-3">
                     <label for="date" class="form-label">Data</label>

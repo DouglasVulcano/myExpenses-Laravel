@@ -48,16 +48,41 @@
 
 /***** DASHBOARD **********/
 .banner-dashboard {
-    padding-top: 70px;
+    padding-top: 30px;
     padding-bottom: 70px;
 }
+.dashboard-title {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
+
 .aside-dashboard {
     background-color: rgb(36, 36, 36);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
 }
 .aside-title {
     padding-top: 20px;
     padding-bottom: 10px;
     text-align: center;
+    font-size: 16px;
+}
+
+/* List Expenses */
+
+.expense-title {
+    background-color: rgb(39, 114, 89);
+    color: white; 
+    font-size: 23px;
+    padding: 3px;
+    
+    border-radius: 3px;
+}
+.expense-info {
+    list-style: none;
+    margin-left: -15px;
 }
 
 
