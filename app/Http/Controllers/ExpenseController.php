@@ -35,6 +35,12 @@ class ExpenseController extends Controller
             'type' => 'required'
         ]);
 
+
+        $user = auth()->user();
+
+
+        $expense->user_id = $user->id;
+        
         $expense->expenseTitle = $request->expenseTitle;
         $expense->price = $request->price;
         $expense->date = $request->date;
