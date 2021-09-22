@@ -7,6 +7,12 @@ nav {
     box-shadow: 1px 1px 6px black;
 }
 
+nav ul li a {
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 nav ul li a:hover {
     background-color: rgb(211, 211, 211);
 }
@@ -78,19 +84,6 @@ nav ul li a:hover {
     background-color: rgb(36, 36, 36);
 }
 
-@media only screen and (max-width: 992px) {
-    .aside-dashboard {
-        height: 150px;
-        margin-bottom: 20px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .aside-dashboard {
-        height: 150px;
-    }
-}
-
 .aside-title {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -141,6 +134,12 @@ nav ul li a:hover {
     margin-left: -15px;
     font-size: 14px;
 }
+.expense-info-div:hover {
+    background-color: rgb(39, 114, 89);
+}
+.img-empty {
+    width: 30%;
+}  
 
 /** Edit Dashboard **/
 .edit-dashboard {
@@ -163,3 +162,35 @@ nav ul li a:hover {
     font-size: 20pt;
 }
 
+/** Media **/
+
+@media only screen and (max-width: 992px) {
+    .aside-dashboard {
+        height: 150px;
+        margin-bottom: 20px;
+    }
+    nav {
+        text-align: center;
+    }
+    .dashboard-title {
+        font-size: 14pt;
+    }     
+    .img-empty {
+        width: 30%;
+    }    
+}
+
+@media only screen and (max-width: 600px) {
+    .aside-dashboard {
+        height: 130px;
+    }
+    nav {
+        text-align: center;
+    }
+    .dashboard-title {
+        font-size: 14pt;
+    }
+    .img-empty {
+        width: 30%;
+    }    
+}

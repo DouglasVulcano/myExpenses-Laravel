@@ -117,13 +117,25 @@ class ExpenseController extends Controller
 
         $expense = Expense::findOrFail($id);
         return view('expenses.edit', [ 
-                                    'expense' => $expense,
-                                    'userName' => $userName
+                                        'expense' => $expense,
+                                        'userName' => $userName
                                     ]);
     }
 
     public function destroy($id) {
         Expense::findOrFail($id)->delete();
         return redirect('/dashboard');
+    }
+
+    public function list() {
+        $user = auth()->user();
+
+        $userName = $user->name;
+        $expenses = $user->expenses;
+
+        return view('expenses.list', [ 
+                                        'expenses' => $expenses,
+                                        'userName' => $userName
+                                    ]);
     }
 }

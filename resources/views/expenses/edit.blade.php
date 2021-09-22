@@ -14,7 +14,7 @@
         <div class="mb-3">
             <label for="type" class="form-label">Tipo</label>
             <select class="form-select" id="type" name="type">
-                <option selected><strong>Escolha o tipo de despesa</strong></option>
+                <option value="{{$expense->type}}" >Valor atual: {{$expense->type}}</option>
                 <option value="Alimentação">Alimentação</option>
                 <option value="Aluguel">Aluguel</option>
                 <option value="Condomínio">Condomínio</option>

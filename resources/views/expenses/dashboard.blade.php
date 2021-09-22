@@ -2,12 +2,14 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<div class="container banner-dashboard"> <!-- Dashboard -->
+<div class="container-fluid banner-dashboard"> <!-- Dashboard -->
     <div class="row">
         <div class="col-lg-2 text-light aside-dashboard"> <!-- Aside -->
             <h5 class="dashboard-title"><ion-icon name="grid-outline"></ion-icon> Menu</h5>
+            
             <a href="/expenses/create" class="btn btn-outline-light btn-sm form-control mb-1 aside-btn" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
-            <a href="" class="btn btn-outline-light btn-sm form-control aside-btn" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="list-circle-outline"></ion-icon> Lista de Despesas</a>
+
+            <a href="/expenses/list" class="btn btn-outline-light btn-sm form-control aside-btn"><ion-icon name="list-circle-outline"></ion-icon> Minhas despesas</a>
         </div> <!-- Aside -->
 
         <div class="col-lg-10">
@@ -60,7 +62,7 @@
                     @endforeach
                     @if(count($lastExpenses) == 0)
                     <div class="nothing">
-                        <img src="/img/search-icon.png" alt="Search Icon" class="img-fluid">
+                        <img src="/img/search-icon.png" alt="Search Icon" class="img-fluid  img-empty">
                         <p>Não há despesas cadastradas.</p>
                     </div>
                     @endif
