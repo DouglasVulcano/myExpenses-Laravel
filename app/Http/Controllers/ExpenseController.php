@@ -7,14 +7,22 @@ use App\Models\Expense;
 use App\Models\User;
 
 class ExpenseController extends Controller
-{
+{   
     public function index() {
-        return view('index');
+        $user = auth()->user();
+        if ($user){
+            $userName = $user->name;
+        } else {
+            $userName = '';
+        }
+
+        return view('index', [
+            'userName' => $userName
+            ]);
     }
 
     public function dashboard() {
         $user = auth()->user();
-
         $userName = $user->name;
 
         /** Todas as Despesas */
@@ -99,8 +107,19 @@ class ExpenseController extends Controller
     }
 
     public function edit($id) {
+
+        $user = auth()->user();
+        if ($user){
+            $userName = $user->name;
+        } else {
+            $userName = '';
+        }
+
         $expense = Expense::findOrFail($id);
-        return view('expenses.edit', ['expense' => $expense]);
+        return view('expenses.edit', [ 
+                                    'expense' => $expense,
+                                    'userName' => $userName
+                                    ]);
     }
 
     public function destroy($id) {

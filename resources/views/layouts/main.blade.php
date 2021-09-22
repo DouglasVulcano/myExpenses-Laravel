@@ -37,16 +37,24 @@
                 @endguest
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/"><ion-icon name="home-outline"></ion-icon> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                    <a class="nav-link" href="/dashboard"><ion-icon name="stats-chart-outline"></ion-icon> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <form action="/logout" method="post">
-                        @csrf
-                        <a class="nav-link" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();"><ion-icon name="log-out-outline" ></ion-icon> Log Out</a>
-                    </form>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" type="button" id="dropMenu" data-bs-toggle="dropdown" aria-expanded="false"><ion-icon name="person-outline"></ion-icon> {{$userName}}</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropMenu" id="ul-drop-menu">
+                            <li><a href="#" class="nav-link"><ion-icon name="settings-outline"></ion-icon> Conta</a></li>
+                            <li>
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <a class="nav-link" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();"><ion-icon name="log-out-outline" ></ion-icon> Log Out</a>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 @endauth
             </ul>
@@ -56,7 +64,7 @@
   
 @yield('content')
 
-<div class="container-fluid bg-dark text-light" id="footer">
+<div class="footer container-fluid bg-dark text-light" id="footer">
     <div class="row">
         <div class="col-md-6">
             <p class="mt-3 mb-3">My Expenses &copy; @php echo date('Y') @endphp</p>
@@ -66,6 +74,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Bootstrap Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

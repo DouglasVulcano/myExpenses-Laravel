@@ -3,13 +3,23 @@
     margin: 0;
 }
 
-.navMain {
-    text-align: right;
+nav {
+    box-shadow: 1px 1px 6px black;
+}
+
+nav ul li a:hover {
+    background-color: rgb(211, 211, 211);
+}
+/** Drop Menu */
+#ul-drop-menu {
+    background-color: #f7f7f7;
+    border: none;
+    text-align: center;
 }
 
 /* Banner */
 .banner-app {
-    padding-top: 100px;
+    padding-top: 70px;
     padding-bottom: 100px;
     text-align: center;
 }
@@ -53,20 +63,34 @@
 /***** DASHBOARD **********/
 .banner-dashboard {
     padding-top: 10px;
-    margin-bottom: 5px;
 }
 .dashboard-title {
-    padding: 9px;
+    padding: 10px;
     font-size: 18pt;
     color: white;
     background-color: rgb(36, 36, 36);
 }
 
 .aside-dashboard {
+    height: 480px;
     margin-bottom: 5px;
     padding-bottom: 5px;
     background-color: rgb(36, 36, 36);
 }
+
+@media only screen and (max-width: 992px) {
+    .aside-dashboard {
+        height: 150px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .aside-dashboard {
+        height: 150px;
+    }
+}
+
 .aside-title {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -91,13 +115,12 @@
     border-radius: 3px;
 }
 .card-expenses-red {
-    background-color: rgb(223, 82, 82);
+    background-color: rgb(241, 63, 32);
     color: white; 
     font-size: 14pt;
     padding: 3px;
     border-radius: 3px;
 }
-
 .card-expenses-p {
     text-align: center;
     margin: 10px;
@@ -121,16 +144,22 @@
 
 /** Edit Dashboard **/
 .edit-dashboard {
-    padding-top: 30px;
+    margin-top: 10px;
     padding-bottom: 40px;
 
 }
 
 /* Footer */
-#footer {
+.footer {
     text-align: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-#footer p {
-    padding-top: 50px;
-    padding-bottom: 50px;
+
+/* Sem resultados */
+.nothing {
+    text-align: center;
+    font-size: 20pt;
 }
+

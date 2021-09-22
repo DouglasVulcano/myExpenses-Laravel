@@ -2,12 +2,12 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<div class="container-fluid banner-dashboard"> <!-- Dashboard -->
+<div class="container banner-dashboard"> <!-- Dashboard -->
     <div class="row">
         <div class="col-lg-2 text-light aside-dashboard"> <!-- Aside -->
-            <h5 class="aside-title"><ion-icon name="person-outline"></ion-icon> {{$userName}}</h5>
-            <a href="/expenses/create" class="btn btn-outline-light form-control mb-1" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
-            <a href="#" class="btn btn-outline-light form-control mb-1"><ion-icon name="settings-outline"></ion-icon> Conta</a>
+            <h5 class="dashboard-title"><ion-icon name="grid-outline"></ion-icon> Menu</h5>
+            <a href="/expenses/create" class="btn btn-outline-light btn-sm form-control mb-1 aside-btn" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
+            <a href="" class="btn btn-outline-light btn-sm form-control aside-btn" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="list-circle-outline"></ion-icon> Lista de Despesas</a>
         </div> <!-- Aside -->
 
         <div class="col-lg-10">
@@ -59,7 +59,10 @@
                     </div>
                     @endforeach
                     @if(count($lastExpenses) == 0)
-                    <p>Não há despesas cadastradas.</p>
+                    <div class="nothing">
+                        <img src="/img/search-icon.png" alt="Search Icon" class="img-fluid">
+                        <p>Não há despesas cadastradas.</p>
+                    </div>
                     @endif
                 </div> <!-- Lista -->
             </div>
