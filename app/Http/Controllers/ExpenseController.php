@@ -17,23 +17,49 @@ class ExpenseController extends Controller
 
         $userName = $user->name;
 
+        /** Todas as Despesas */
         $expenses = $user->expenses;
+        
+        /** Pegando as últimas 3 despesas */
+        if (count($expenses) > 3) {
+
+            $lastExpenses = [$expenses[count($expenses) - 1], $expenses[count($expenses) - 2], $expenses[count($expenses) -3]];
+
+        } else {
+
+            $lastExpenses = [];
+
+            for ($i = 1; $i <= count($expenses); $i++) {
+                array_push($lastExpenses, $expenses[$i-1]);     
+            }
+        }
         
         /** Quantidade de Despesas */
         $totalExpenses = count($expenses);
+
+        /** Todos os prices */
+        $prices = [];
 
         /** Gasto total */
         $qtdTotal = 0;
         foreach ($expenses as $values) {
             $qtdTotal += $values->price;
+            array_push($prices, $values->price);
         }
         
+        /** Maior preço */
+        if (count($prices) == 0){
+            $maxPrice = 0;
+        } else {
+            $maxPrice = max($prices);
+        }
 
         return view('expenses.dashboard', [
                                             'userName' => $userName,
-                                            'expenses' => $expenses,
+                                            'lastExpenses' => $lastExpenses,
                                             'totalExpenses' => $totalExpenses,
-                                            'qtdTotal' => $qtdTotal
+                                            'qtdTotal' => $qtdTotal,
+                                            'maxPrice' => $maxPrice
                                             ]);
     }
 

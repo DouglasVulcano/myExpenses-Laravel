@@ -3,6 +3,9 @@
     margin: 0;
 }
 
+.navMain {
+    text-align: right;
+}
 
 /* Banner */
 .banner-app {
@@ -49,20 +52,20 @@
 
 /***** DASHBOARD **********/
 .banner-dashboard {
-    padding-top: 30px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    margin-bottom: 5px;
 }
 .dashboard-title {
     padding: 9px;
-    font-size: 20px;
+    font-size: 18pt;
     color: white;
     background-color: rgb(36, 36, 36);
 }
 
 .aside-dashboard {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
     background-color: rgb(36, 36, 36);
-    margin-bottom: 30px;
-    padding-bottom: 10px;
 }
 .aside-title {
     padding-top: 20px;
@@ -71,14 +74,43 @@
     font-size: 16px;
 }
 
-/* List Expenses */
 
+/* Dashboard Análise */
+.card-expenses-green {
+    background-color: rgb(39, 114, 89);
+    color: white; 
+    font-size: 14pt;
+    padding: 3px;
+    border-radius: 3px;
+}
+.card-expenses-orange {
+    background-color: orange;
+    color: white; 
+    font-size: 14pt;
+    padding: 3px;
+    border-radius: 3px;
+}
+.card-expenses-red {
+    background-color: rgb(223, 82, 82);
+    color: white; 
+    font-size: 14pt;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.card-expenses-p {
+    text-align: center;
+    margin: 10px;
+    font-size: 16pt;
+}
+
+
+/* List Expenses */
 .expense-title {
     background-color: rgb(39, 114, 89);
     color: white; 
     font-size: 18px;
     padding: 3px;
-    
     border-radius: 3px;
 }
 .expense-info {
@@ -96,7 +128,6 @@
 
 /* Footer */
 #footer {
-    margin-top: 50px;
     text-align: center;
 }
 #footer p {

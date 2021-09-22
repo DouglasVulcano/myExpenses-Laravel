@@ -4,23 +4,35 @@
 @section('content')
 <div class="container-fluid banner-dashboard"> <!-- Dashboard -->
     <div class="row">
-        <div class="col-md-2 text-light aside-dashboard"> <!-- Aside -->
+        <div class="col-lg-2 text-light aside-dashboard"> <!-- Aside -->
             <h5 class="aside-title"><ion-icon name="person-outline"></ion-icon> {{$userName}}</h5>
             <a href="/expenses/create" class="btn btn-outline-light form-control mb-1" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
+            <a href="#" class="btn btn-outline-light form-control mb-1"><ion-icon name="settings-outline"></ion-icon> Conta</a>
         </div> <!-- Aside -->
 
-        <div class="col-md-10"> <!-- Menu Principal -->
+        <div class="col-lg-10">
             <div class="row">
-
-                <div class="col-md-8">
+                <div class="col-md-8"> <!-- Análise -->
                    <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Análise</h1>
-                   <h1>{{$totalExpenses}}</h1>
-                   <h1>{{$qtdTotal}}</h1>
-                </div>
+                   <div class="row">
+                       <div class="col-md-4">
+                           <h3 class="card-expenses-green"><ion-icon name="wallet-outline"></ion-icon> Nº Despesas</h3>
+                           <p class="card-expenses-p">{{$totalExpenses}}</p>
+                       </div>
+                       <div class="col-md-4">
+                           <h3 class="card-expenses-orange"><ion-icon name="cash-outline"></ion-icon> Valor Total</h3>
+                           <p class="card-expenses-p">R$ {{$qtdTotal}}</p>
+                       </div>
+                       <div class="col-md-4">
+                           <h3 class="card-expenses-red"><ion-icon name="chevron-up-outline"></ion-icon> Maior Valor</h3>
+                           <p class="card-expenses-p">R$ {{$maxPrice}}</p>
+                       </div>
+                   </div>
+                </div> <!-- Análise -->
 
-                <div class="col-md-4">
-                    <h1 class="dashboard-title"><ion-icon name="list-circle-outline"></ion-icon> Meus Gastos</h1>
-                    @foreach($expenses as $expense)
+                <div class="col-md-4"> <!-- Lista -->
+                    <h1 class="dashboard-title"><ion-icon name="list-circle-outline"></ion-icon> Últimas Despesas</h1>                    
+                    @foreach($lastExpenses as $expense)
                     <div class="expense mb-2">
                         <h1 class="expense-title"><ion-icon name="chevron-forward-outline"></ion-icon>{{$expense->expenseTitle}}</h1>
                         <div class="row">
@@ -46,12 +58,12 @@
                         </div>
                     </div>
                     @endforeach
-                    @if(count($expenses) == 0)
+                    @if(count($lastExpenses) == 0)
                     <p>Não há despesas cadastradas.</p>
                     @endif
-                </div>
+                </div> <!-- Lista -->
             </div>
-        </div> <!-- Menu Principal -->
+        </div> 
     </div>
 </div> <!-- Dashboard -->
 
