@@ -49,7 +49,7 @@
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" type="button" id="dropMenu" data-bs-toggle="dropdown" aria-expanded="false"><ion-icon name="person-outline"></ion-icon> {{$userName}}</a>
                         <ul class="dropdown-menu" aria-labelledby="dropMenu" id="ul-drop-menu">
-                            <li><a href="#" class="nav-link"><ion-icon name="settings-outline"></ion-icon> Conta</a></li>
+                            <li><a href="/expenses/profile" class="nav-link"><ion-icon name="settings-outline"></ion-icon> Conta</a></li>
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf

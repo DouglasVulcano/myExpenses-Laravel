@@ -75,6 +75,7 @@
                         </div>
                     </div>
                     @endforeach
+                    <hr>
                     @if(count($lastExpenses) == 0)
                     <div class="nothing">
                         <img src="/img/search-icon.png" alt="Search Icon" class="img-fluid  img-empty">

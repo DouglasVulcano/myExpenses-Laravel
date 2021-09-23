@@ -17,8 +17,8 @@ class ExpenseController extends Controller
         }
 
         return view('index', [
-            'userName' => $userName
-            ]);
+                            'userName' => $userName
+                            ]);
     }
 
 
@@ -33,7 +33,11 @@ class ExpenseController extends Controller
         
         /** Pegando as últimas 3 despesas */
         if (count($expenses) > 3) {
-            $lastExpenses = [$expenses[count($expenses) - 1], $expenses[count($expenses) - 2], $expenses[count($expenses) -3]];
+            $lastExpenses = [
+                             $expenses[count($expenses) - 1], 
+                             $expenses[count($expenses) - 2], 
+                             $expenses[count($expenses) - 3]
+                            ];
         } else {
 
             $lastExpenses = [];
@@ -133,7 +137,7 @@ class ExpenseController extends Controller
                             'price' => 'required',
                             'date' => 'required',
                             'type' => 'required'
-        ]);
+                        ]);
 
 
         $user = auth()->user();
@@ -153,24 +157,12 @@ class ExpenseController extends Controller
 
 
 
-
-
-
-
-
-
     public function update(Request $request) {
 
         Expense::findOrFail($request->id)->update($request->all());
 
-
         return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
     }
-
-
-
-
-
 
 
 
@@ -191,15 +183,10 @@ class ExpenseController extends Controller
     }
 
 
-
-
-
     public function destroy($id) {
         Expense::findOrFail($id)->delete();
         return redirect('/dashboard');
     }
-
-
 
 
     public function list() {
