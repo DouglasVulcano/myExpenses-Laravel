@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Expense;
 use App\Models\User;
+use App\Actions\Jetstream\DeleteUser;
 
 class UserController extends Controller
 {
@@ -74,6 +75,19 @@ class UserController extends Controller
             return redirect('/expenses/profile')->with('success', 'Senha alterada com sucesso!');
         } else {
             return redirect('/expenses/profile')->with('fail', 'A Corrija a senha atual.');
+        }
+    }
+
+    public function destroyUser(Request $request)
+    {   
+        $user = auth()->user();
+        $data = $request->all();
+
+        if (password_verify($data['password'], $user->password)) {
+            User::findOrFail($user->id)->delete();
+            return redirect('/');
+        } else {
+            return redirect('/expenses/profile')->with('fail', 'Senha incorreta.');
         }
     }
 

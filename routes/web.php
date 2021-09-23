@@ -33,3 +33,4 @@ Route::get('/expenses/list', [ExpenseController::class, 'list'])->middleware('au
 Route::get('/expenses/profile', [UserController::class, 'profile'])->middleware('auth');
 Route::put('/expenses/passwordUpdate', [UserController::class, 'passwordUpdate'])->middleware('auth');
 Route::put('/expenses/nameUpdate', [UserController::class, 'nameUpdate'])->middleware('auth');
+Route::put('/expenses/delete-user', [UserController::class, 'destroyUser'])->middleware('auth');

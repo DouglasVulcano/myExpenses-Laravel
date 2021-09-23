@@ -31,6 +31,12 @@
         </div>
     </div>
     @endforeach
+    @if(count($expenses) == 0)
+    <div class="nothing">
+        <img src="/img/search-icon.png" alt="Search Icon" class="img-fluid  img-empty">
+        <p>Não há despesas cadastradas.</p>
+    </div>
+    @endif
 </div> <!-- List -->
 
 

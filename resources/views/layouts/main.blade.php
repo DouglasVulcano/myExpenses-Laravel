@@ -74,6 +74,7 @@
         </div>
         <div class="col-md-6">
             <p class="mt-3 mb-3">Desenvolvido por: <strong>Douglas Vulcano</strong></p>
+            <p></p>
         </div>
     </div>
 </div>

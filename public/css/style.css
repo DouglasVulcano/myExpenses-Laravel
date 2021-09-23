@@ -74,11 +74,11 @@ nav ul li a:hover {
 .dashboard-div {
     background-color: rgb(49, 49, 49);
     margin-bottom: 5px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     border-radius: 10px;
 }
 .dashboard-title {
-    padding: 10px 5px;
+    padding: 5px 5px;
     font-size: 18pt;
     color: white;
 }
@@ -86,7 +86,8 @@ nav ul li a:hover {
 .aside-dashboard {
     padding-bottom: 90px;
     margin-bottom: 5px;
-    background-color: rgb(36, 36, 36);
+    border-radius: 10px;
+    background-color: rgb(39, 114, 89);
 }
 
 /* Dashboard Análise */
