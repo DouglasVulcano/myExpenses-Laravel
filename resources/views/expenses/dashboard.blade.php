@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Dashboard')
-
 @section('content')
+
 <div class="container-fluid banner-dashboard"> <!-- Dashboard -->
     <div class="row">
         <div class="col-lg-2 text-light aside-dashboard"> <!-- Aside -->
@@ -9,9 +9,8 @@
 
             <a href="/expenses/create" class="btn btn-outline-light btn-sm form-control mb-1 aside-btn" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
 
-            <a href="/expenses/list" class="btn btn-outline-light btn-sm form-control aside-btn"><ion-icon name="list-circle-outline"></ion-icon> Minhas despesas</a>
+            <a href="/expenses/list" class="btn btn-outline-light btn-sm form-control aside-btn"><ion-icon name="list-circle-outline"></ion-icon> Ver todas</a>
         </div> <!-- Aside -->
-
         <div class="col-lg-10">
             <div class="row">
                 <div class="col-md-8"> <!-- Análise -->
@@ -37,9 +36,8 @@
                     <div class="dashboard-div">
                         <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Gráfico</h1>
                     </div>
-                    <pre>@php print_r($expenseTypes); @endphp</pre>
                     <div class="mb-2">
-                        <canvas id="myChart" width="400" height="200"></canvas>
+                        <canvas id="myChart"></canvas>
                     </div>
                     <!-- Gráfico -->
 
@@ -136,4 +134,52 @@
     </div>
   </div>
 </div>
+
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Alimentação', 'Aluguel', 'Condomínio', 'Contas', 'Conta de água/luz', 'Combustível', 'Internet', 'Transporte', 'Gerais'],
+            datasets: [{
+                label: '- Quantidade',
+                data: [{{implode(',', $expenseTypes)}}],
+                backgroundColor: [
+                    'rgba(255, 99, 132,  0.9)',
+                    'rgba(54, 162, 235,  0.9)',
+                    'rgba(255, 206, 86,  0.9)',
+                    'rgba(75, 192, 192,  0.9)',
+                    'rgba(153, 102, 255,  0.9)',
+                    'rgba(255, 159, 64,  0.9)',
+                    'rgba(75, 192, 192,  0.9)',
+                    'rgba(153, 102, 255,  0.9)',
+                    'rgba(255, 159, 64, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+        
+           y: {
+                beginAtZero: true,
+                steps: 10,
+                stepValue: 5,      
+                max: 10
+           }
+      
+        }
+    });
+</script>
 @endsection

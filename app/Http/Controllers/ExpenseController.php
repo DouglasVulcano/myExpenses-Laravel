@@ -64,65 +64,51 @@ class ExpenseController extends Controller
 
 
         /** Captura de todos os tipos de despesas */
-
-        $food = 0;
-        $rent = 0;
-        $cond = 0;
-        $bills = 0;
-        $waterlight = 0;
-        $fuel = 0;
-        $internet = 0;
-        $transp = 0;
-        $all = 0;
-
+        $expenseTypes = array( 0, 0, 0, 0, 0, 0, 0, 0, 0);
+ 
         foreach ($expenses as $types) {
 
             switch ($types->type) {
-                
+
                 case 'Alimentação':
-                    $food++;
+                    $expenseTypes[0]++;
                     break;
+
                 case 'Aluguel':
-                    $rent++;
+                    $expenseTypes[1]++;
                     break;
+
                 case 'Condomínio':
-                    $cond++;
+                    $expenseTypes[2]++;
                     break;
+
                 case 'Contas':
-                    $bills++;
+                    $expenseTypes[3]++;
                     break;
+
                 case 'Conta de água/luz':
-                    $waterlight++;
+                    $expenseTypes[4]++;
                     break;
+
                 case 'Combustível':
-                    $fuel++;
+                    $expenseTypes[5]++;
                     break;
+
                 case 'Internet':
-                    $internet++;
+                    $expenseTypes[6]++;
                     break;
+
                 case 'Transporte':
-                    $transp++;
+                    $expenseTypes[7]++;
                     break;
+
                 case 'Insumos Gerais/ Outros':
-                    $all++;
+                    $expenseTypes[8]++;
                     break;
             }
         }
 
-        $expenseTypes = array(
-                                'food' => $food,
-                                'rent' => $rent,
-                                'cond' => $cond,
-                                'bills' => $bills,
-                                'waterlight' => $waterlight,
-                                'fuel' => $fuel,
-                                'internet' => $internet,
-                                'transp' => $transp,
-                                'all' => $all
-        );
-
         
-
         return view('expenses.dashboard', [
                                             'userName' => $userName,
                                             'lastExpenses' => $lastExpenses,
@@ -142,10 +128,10 @@ class ExpenseController extends Controller
 
         /** Validação dos campos */
         $request->validate([
-            'expenseTitle' => 'required',
-            'price' => 'required',
-            'date' => 'required',
-            'type' => 'required'
+                            'expenseTitle' => 'required',
+                            'price' => 'required',
+                            'date' => 'required',
+                            'type' => 'required'
         ]);
 
 
