@@ -84,8 +84,7 @@ nav ul li a:hover {
 }
 
 .aside-dashboard {
-    height: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 90px;
     margin-bottom: 5px;
     background-color: rgb(36, 36, 36);
 }

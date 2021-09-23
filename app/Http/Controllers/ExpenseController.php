@@ -21,7 +21,10 @@ class ExpenseController extends Controller
             ]);
     }
 
+
+
     public function dashboard() {
+
         $user = auth()->user();
         $userName = $user->name;
 
@@ -30,9 +33,7 @@ class ExpenseController extends Controller
         
         /** Pegando as últimas 3 despesas */
         if (count($expenses) > 3) {
-
             $lastExpenses = [$expenses[count($expenses) - 1], $expenses[count($expenses) - 2], $expenses[count($expenses) -3]];
-
         } else {
 
             $lastExpenses = [];
@@ -116,7 +117,7 @@ class ExpenseController extends Controller
                                             'qtdTotal' => $qtdTotal,
                                             'maxPrice' => $maxPrice,
                                             'expenseTypes' => $expenseTypes
-                                            ]);
+                                         ]);
     }
 
 

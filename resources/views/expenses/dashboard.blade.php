@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-8"> <!-- Análise -->
                     <div class="dashboard-div">
-                        <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Análise</h1>
+                        <h1 class="dashboard-title"><ion-icon name="analytics-outline"></ion-icon> Análise</h1>
                     </div>
                     <div class="row mb-4">
                         <div class="col-md-4">
