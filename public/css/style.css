@@ -70,27 +70,25 @@ nav ul li a:hover {
 .banner-dashboard {
     padding-top: 10px;
 }
+
+.dashboard-div {
+    background-color: rgb(49, 49, 49);
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
 .dashboard-title {
-    padding: 10px;
+    padding: 10px 5px;
     font-size: 18pt;
     color: white;
-    background-color: rgb(36, 36, 36);
 }
 
 .aside-dashboard {
-    height: 480px;
+    height: 100%;
+    padding-bottom: 100px;
     margin-bottom: 5px;
-    padding-bottom: 5px;
     background-color: rgb(36, 36, 36);
 }
-
-.aside-title {
-    padding-top: 20px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-size: 16px;
-}
-
 
 /* Dashboard Análise */
 .card-expenses-green {
@@ -168,6 +166,7 @@ nav ul li a:hover {
     .aside-dashboard {
         height: 150px;
         margin-bottom: 20px;
+        padding-bottom: 5px;
     }
     nav {
         text-align: center;
@@ -183,6 +182,7 @@ nav ul li a:hover {
 @media only screen and (max-width: 600px) {
     .aside-dashboard {
         height: 130px;
+        padding-bottom: 5px;
     }
     nav {
         text-align: center;

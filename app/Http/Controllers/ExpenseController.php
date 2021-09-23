@@ -62,14 +62,80 @@ class ExpenseController extends Controller
             $maxPrice = max($prices);
         }
 
+
+        /** Captura de todos os tipos de despesas */
+
+        $food = 0;
+        $rent = 0;
+        $cond = 0;
+        $bills = 0;
+        $waterlight = 0;
+        $fuel = 0;
+        $internet = 0;
+        $transp = 0;
+        $all = 0;
+
+        foreach ($expenses as $types) {
+
+            switch ($types->type) {
+                
+                case 'Alimentação':
+                    $food++;
+                    break;
+                case 'Aluguel':
+                    $rent++;
+                    break;
+                case 'Condomínio':
+                    $cond++;
+                    break;
+                case 'Contas':
+                    $bills++;
+                    break;
+                case 'Conta de água/luz':
+                    $waterlight++;
+                    break;
+                case 'Combustível':
+                    $fuel++;
+                    break;
+                case 'Internet':
+                    $internet++;
+                    break;
+                case 'Transporte':
+                    $transp++;
+                    break;
+                case 'Insumos Gerais/ Outros':
+                    $all++;
+                    break;
+            }
+        }
+
+        $expenseTypes = array(
+                                'food' => $food,
+                                'rent' => $rent,
+                                'cond' => $cond,
+                                'bills' => $bills,
+                                'waterlight' => $waterlight,
+                                'fuel' => $fuel,
+                                'internet' => $internet,
+                                'transp' => $transp,
+                                'all' => $all
+        );
+
+        
+
         return view('expenses.dashboard', [
                                             'userName' => $userName,
                                             'lastExpenses' => $lastExpenses,
                                             'totalExpenses' => $totalExpenses,
                                             'qtdTotal' => $qtdTotal,
-                                            'maxPrice' => $maxPrice
+                                            'maxPrice' => $maxPrice,
+                                            'expenseTypes' => $expenseTypes
                                             ]);
     }
+
+
+
+
 
     public function store(Request $request) {
         $expense = new Expense;
@@ -98,6 +164,14 @@ class ExpenseController extends Controller
         return redirect('/dashboard');
     }
 
+
+
+
+
+
+
+
+
     public function update(Request $request) {
 
         Expense::findOrFail($request->id)->update($request->all());
@@ -105,6 +179,13 @@ class ExpenseController extends Controller
 
         return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
     }
+
+
+
+
+
+
+
 
     public function edit($id) {
 
@@ -122,10 +203,17 @@ class ExpenseController extends Controller
                                     ]);
     }
 
+
+
+
+
     public function destroy($id) {
         Expense::findOrFail($id)->delete();
         return redirect('/dashboard');
     }
+
+
+
 
     public function list() {
         $user = auth()->user();

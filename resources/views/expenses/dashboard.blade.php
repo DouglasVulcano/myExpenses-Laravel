@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-2 text-light aside-dashboard"> <!-- Aside -->
             <h5 class="dashboard-title"><ion-icon name="grid-outline"></ion-icon> Menu</h5>
-            
+
             <a href="/expenses/create" class="btn btn-outline-light btn-sm form-control mb-1 aside-btn" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
 
             <a href="/expenses/list" class="btn btn-outline-light btn-sm form-control aside-btn"><ion-icon name="list-circle-outline"></ion-icon> Minhas despesas</a>
@@ -15,25 +15,42 @@
         <div class="col-lg-10">
             <div class="row">
                 <div class="col-md-8"> <!-- Análise -->
-                   <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Análise</h1>
-                   <div class="row">
-                       <div class="col-md-4">
-                           <h3 class="card-expenses-green"><ion-icon name="wallet-outline"></ion-icon> Nº Despesas</h3>
-                           <p class="card-expenses-p">{{$totalExpenses}}</p>
-                       </div>
-                       <div class="col-md-4">
-                           <h3 class="card-expenses-orange"><ion-icon name="cash-outline"></ion-icon> Valor Total</h3>
-                           <p class="card-expenses-p">R$ {{$qtdTotal}}</p>
-                       </div>
-                       <div class="col-md-4">
-                           <h3 class="card-expenses-red"><ion-icon name="chevron-up-outline"></ion-icon> Maior Valor</h3>
-                           <p class="card-expenses-p">R$ {{$maxPrice}}</p>
-                       </div>
-                   </div>
+                    <div class="dashboard-div">
+                        <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Análise</h1>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <h3 class="card-expenses-green"><ion-icon name="wallet-outline"></ion-icon> Nº Despesas</h3>
+                            <p class="card-expenses-p">{{$totalExpenses}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="card-expenses-orange"><ion-icon name="cash-outline"></ion-icon> Valor Total</h3>
+                            <p class="card-expenses-p">R$ {{$qtdTotal}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="card-expenses-red"><ion-icon name="chevron-up-outline"></ion-icon> Maior Valor</h3>
+                            <p class="card-expenses-p">R$ {{$maxPrice}}</p>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico -->
+                    <div class="dashboard-div">
+                        <h1 class="dashboard-title"><ion-icon name="bar-chart-outline"></ion-icon> Gráfico</h1>
+                    </div>
+                    <pre>@php print_r($expenseTypes); @endphp</pre>
+                    <div class="mb-2">
+                        <canvas id="myChart" width="400" height="200"></canvas>
+                    </div>
+                    <!-- Gráfico -->
+
                 </div> <!-- Análise -->
 
                 <div class="col-md-4"> <!-- Lista -->
-                    <h1 class="dashboard-title"><ion-icon name="list-circle-outline"></ion-icon> Últimas Despesas</h1>                    
+                    <div class="dashboard-div">
+                        <h1 class="dashboard-title"><ion-icon name="list-circle-outline"></ion-icon> Últimas Despesas</h1>   
+                        <a href="/expenses/list" class="btn btn-outline-light btn-sm form-control aside-btn">Ver todas</a>
+                    </div>
+                                     
                     @foreach($lastExpenses as $expense)
                     <div class="expense mb-2">
                         <h1 class="expense-title"><ion-icon name="chevron-forward-outline"></ion-icon>{{$expense->expenseTitle}}</h1>
@@ -96,8 +113,7 @@
                         <option value="Aluguel">Aluguel</option>
                         <option value="Condomínio">Condomínio</option>
                         <option value="Contas">Contas</option>
-                        <option value="Conta de água">Conta de água</option>
-                        <option value="Conta de luz">Conta de luz</option>
+                        <option value="Conta de água/luz">Conta de água/luz</option>
                         <option value="Combustível">Combustível</option>
                         <option value="Internet">Internet</option>
                         <option value="Transporte">Transporte</option>

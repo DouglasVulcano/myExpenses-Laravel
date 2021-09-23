@@ -3,7 +3,8 @@
 
 @section('content')
 <div class="container col-md-6 edit-dashboard"> <!-- List -->
-    <h1 class="dashboard-title">Minhas despesas</h1>
+    <div class="dashboard-div"><h1 class="dashboard-title">Minhas despesas</h1></div>
+    
    
 </div> <!-- List -->
 @endsection
