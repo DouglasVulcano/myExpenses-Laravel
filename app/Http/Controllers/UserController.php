@@ -89,6 +89,7 @@ class UserController extends Controller
         } else {
             return redirect('/expenses/profile')->with('fail', 'Senha incorreta.');
         }
+    
     }
 
 }
