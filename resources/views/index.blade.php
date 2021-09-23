@@ -11,7 +11,7 @@
                     <a href="#info" class="btn btn-outline-dark form-control mt-1 mb-1">Saiba mais</a>
                 </div>
                 <div class="col-md-6">
-                    <a href="/login" class="btn btn-outline-dark form-control mt-1 mb-1">Comece já!</a>
+                    <a href="/register" class="btn btn-outline-dark form-control mt-1 mb-1">Comece já!</a>
                 </div>
             </div>
         </div>

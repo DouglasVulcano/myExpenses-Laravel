@@ -74,9 +74,11 @@
         </div>
         <div class="col-md-6">
             <p class="mt-3 mb-3">Desenvolvido por: <strong>Douglas Vulcano</strong></p>
+            @auth
             <div>
                 <a href="https://github.com/DouglasVulcano" target="blank" style="font-size: 20pt;"><ion-icon name="logo-github"></ion-icon></a>
             </div>
+            @endauth
         </div>
     </div>
 </div>
