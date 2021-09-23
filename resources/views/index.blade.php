@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-5 info-app-card">
                 <h1 class="info-app-title"><ion-icon name="flash-outline"></ion-icon> Ágil</h1>
-                <p class="info-app-p">Em poucos toques a despesa está registrada em sua dashboard.</p>
+                <p class="info-app-p">Em poucos paços a despesa está registrada em sua dashboard.</p>
             </div>
             <div class="col-md-5 info-app-card">
                 <h1 class="info-app-title"><ion-icon name="bar-chart-outline"></ion-icon> Organizado</h1>
