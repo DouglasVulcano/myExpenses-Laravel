@@ -33,7 +33,7 @@
             <input type="number" class="form-control" id="price" name="price" step=".01" value="{{$expense->price}}">
         </div>
         <div class="mb-3">
-            <label for="date" class="form-label">Data</label>
+            <label for="date" class="form-label">Data de vencimento</label>
             <input type="date" class="form-control" id="date" name="date" value="{{$expense->date->format('Y-m-d')}}">
         </div>
         <div class="modal-footer">
