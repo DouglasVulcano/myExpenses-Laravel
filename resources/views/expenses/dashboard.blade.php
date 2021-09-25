@@ -12,7 +12,7 @@
 
                 <a href="/expenses/list" class="btn btn-outline-light form-control"><ion-icon name="list-circle-outline"></ion-icon> Ver todas</a>
             </div> 
-            <div class="col-md mt-5 text-light"> <!-- Último registro -->
+            <div class="col-md mt-3 text-light"> <!-- Último registro -->
                 <div>
                     <h1 class="dashboard-title"><ion-icon name="list-circle-outline"></ion-icon> Última Despesa</h1>
                 </div>
@@ -178,26 +178,26 @@
                 label: '- Quantidade',
                 data: [{{implode(',', $expenseTypes)}}],
                 backgroundColor: [
-                    'rgba(255, 99, 132,  0.9)',
-                    'rgba(54, 162, 235,  0.9)',
-                    'rgba(255, 206, 86,  0.9)',
-                    'rgba(75, 192, 192,  0.9)',
-                    'rgba(153, 102, 255,  0.9)',
-                    'rgba(255, 159, 64,  0.9)',
-                    'rgba(75, 192, 192,  0.9)',
-                    'rgba(153, 102, 255,  0.9)',
-                    'rgba(255, 159, 64, 0.9)'
+                    'rgba(70, 130, 180)',
+                    'rgba(139, 0, 0)',
+                    'rgba(75, 192, 192)',
+                    'rgba(60, 179, 113)',
+                    'rgba(218, 165, 32)',
+                    'rgba(255, 140, 0)',
+                    'rgba(210, 105, 30)',
+                    'rgba(107, 142, 35)',
+                    'rgba(255, 215, 0)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(70, 130, 180)',
+                    'rgba(139, 0, 0)',
+                    'rgba(75, 192, 192)',
+                    'rgba(60, 179, 113)',
+                    'rgba(218, 165, 32)',
+                    'rgba(255, 140, 0)',
+                    'rgba(210, 105, 30)',
+                    'rgba(107, 142, 35)',
+                    'rgba(255, 215, 0)'
                 ],
                 borderWidth: 2
             }]
@@ -222,15 +222,15 @@
             labels: ['Alimentação (R$)', 'Aluguel (R$)', 'Condomínio (R$)', 'Contas (R$)', 'Conta de água/luz (R$)', 'Combustível (R$)', 'Internet (R$)', 'Transporte (R$)', 'Gerais (R$)'],
             datasets: [{
                 backgroundColor: [
-                                    'rgba(255, 99, 132,  0.9)',
-                                    'rgba(54, 162, 235,  0.9)',
-                                    'rgba(255, 206, 86,  0.9)',
-                                    'rgba(75, 192, 192,  0.9)',
-                                    'rgba(153, 102, 255,  0.9)',
-                                    'rgba(255, 159, 64,  0.9)',
-                                    'rgba(75, 192, 192,  0.9)',
-                                    'rgba(153, 102, 255,  0.9)',
-                                    'rgba(255, 159, 64, 0.9)'
+                    'rgba(70, 130, 180)',
+                    'rgba(139, 0, 0)',
+                    'rgba(75, 192, 192)',
+                    'rgba(60, 179, 113)',
+                    'rgba(218, 165, 32)',
+                    'rgba(255, 140, 0)',
+                    'rgba(210, 105, 30)',
+                    'rgba(107, 142, 35)',
+                    'rgba(255, 215, 0)'
                 ],   
                 data: [{{implode(',', $expenseValues)}}]
             }]
