@@ -67,27 +67,21 @@ nav ul li a:hover {
 }
 
 /***** DASHBOARD **********/
-.banner-dashboard {
-    padding-top: 10px;
-}
-
 .dashboard-div {
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(22, 24, 39);
     margin-bottom: 5px;
     padding: 5px 10px;
     border-radius: 10px;
 }
 .dashboard-title {
     padding: 5px 5px;
-    font-size: 18pt;
+    font-size: 14pt;
     color: white;
 }
 
-.aside-dashboard {
-    padding-bottom: 90px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    background-color: rgb(39, 114, 89);
+.div-menu {
+    padding: 10px;
+    background-color: rgb(58, 110, 97);
 }
 
 /* Dashboard Análise */
@@ -119,9 +113,13 @@ nav ul li a:hover {
 }
 
 /** Graphic */
-
-
-
+.graphic-title {
+    font-size: 16pt;
+    text-align: center;
+}
+.graphic-card {
+    box-shadow: 1px 1px 20px rgb(199, 199, 199);
+}
 
 /* List Expenses */
 .expense-title {
@@ -131,13 +129,17 @@ nav ul li a:hover {
     padding: 3px;
     border-radius: 3px;
 }
+.expense-div {
+    color: black;
+    background-color: #f7f7f7;
+    padding: 5px;
+    border-radius: 3px;
+}
+
 .expense-info {
     list-style: none;
     margin-left: -15px;
     font-size: 14px;
-}
-.expense-info-div:hover {
-    background-color: rgb(39, 114, 89);
 }
 .img-empty {
     width: 30%;
@@ -180,7 +182,7 @@ nav ul li a:hover {
     }     
     .img-empty {
         width: 30%;
-    }    
+    }   
 }
 
 @media only screen and (max-width: 600px) {

@@ -13,7 +13,7 @@ class ExpenseController extends Controller
         if ($user){
             $userName = $user->name;
         } else {
-            $userName = '';
+            $userName = 'guest';
         }
 
         return view('index', [
@@ -31,12 +31,10 @@ class ExpenseController extends Controller
         /** Todas as Despesas */
         $expenses = $user->expenses;
         
-        /** Pegando as últimas 3 despesas */
-        if (count($expenses) > 3) {
+        /** Pegando a última despesa */
+        if (count($expenses) > 1) {
             $lastExpenses = [
-                             $expenses[count($expenses) - 1], 
-                             $expenses[count($expenses) - 2], 
-                             $expenses[count($expenses) - 3]
+                             $expenses[count($expenses) - 1]
                             ];
         } else {
 
@@ -70,45 +68,54 @@ class ExpenseController extends Controller
 
         /** Captura de todos os tipos de despesas */
         $expenseTypes = array( 0, 0, 0, 0, 0, 0, 0, 0, 0);
- 
+        $expenseValues = array( 0, 0, 0, 0, 0, 0, 0, 0, 0);
         foreach ($expenses as $types) {
 
             switch ($types->type) {
 
                 case 'Alimentação':
                     $expenseTypes[0]++;
+                    $expenseValues[0] += $types->price;
                     break;
 
                 case 'Aluguel':
                     $expenseTypes[1]++;
+                    $expenseValues[1] += $types->price;
                     break;
 
                 case 'Condomínio':
                     $expenseTypes[2]++;
+                    $expenseValues[2] += $types->price;
                     break;
 
                 case 'Contas':
                     $expenseTypes[3]++;
+                    $expenseValues[3] += $types->price;
                     break;
 
                 case 'Conta de água/luz':
                     $expenseTypes[4]++;
+                    $expenseValues[4] += $types->price;
                     break;
 
                 case 'Combustível':
                     $expenseTypes[5]++;
+                    $expenseValues[5] += $types->price;
                     break;
 
                 case 'Internet':
                     $expenseTypes[6]++;
+                    $expenseValues[6] += $types->price;
                     break;
 
                 case 'Transporte':
                     $expenseTypes[7]++;
+                    $expenseValues[7] += $types->price;
                     break;
 
                 case 'Insumos Gerais/ Outros':
                     $expenseTypes[8]++;
+                    $expenseValues[8] += $types->price;
                     break;
             }
         }
@@ -120,7 +127,8 @@ class ExpenseController extends Controller
                                             'totalExpenses' => $totalExpenses,
                                             'qtdTotal' => $qtdTotal,
                                             'maxPrice' => $maxPrice,
-                                            'expenseTypes' => $expenseTypes
+                                            'expenseTypes' => $expenseTypes,
+                                            'expenseValues' => $expenseValues
                                          ]);
     }
 
