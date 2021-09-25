@@ -7,10 +7,7 @@
         <div class="col-lg-2 div-menu">
             <div class="text-light">
                 <h5 class="dashboard-title"><ion-icon name="grid-outline"></ion-icon> Menu</h5>
-
                 <a href="/expenses/create" class="btn btn-outline-light form-control mb-1" data-bs-toggle="modal" data-bs-target="#modalAddExpense"><ion-icon name="add-outline"></ion-icon> Adicionar despesa</a>
-
-                <a href="/expenses/list" class="btn btn-outline-light form-control"><ion-icon name="list-circle-outline"></ion-icon> Ver todas</a>
             </div> 
             <div class="col-md mt-3 text-light"> <!-- Último registro -->
                 <div>
@@ -43,6 +40,7 @@
                     </div>
                 </div>
                 <hr>
+                <a href="/expenses/list" class="btn btn-outline-light form-control"><ion-icon name="list-circle-outline"></ion-icon> Ver todas</a>
                 @endforeach
                 
                 @if(count($lastExpenses) == 0)
@@ -112,6 +110,61 @@
                             </div>
                         </div>
                     </div> <!-- Gráfico -->
+                </div> 
+
+                <div class="col-lg-12 mt-2">   <!-- Tabela -->
+                    <div class="dashboard-div">
+                        <h1 class="dashboard-title"><ion-icon name="attach-outline"></ion-icon> Tabela</h1>
+                    </div>
+                    <div class="col-md-12 m-auto">
+                        <div class="card pb-4 graphic-card">
+                            <div class="card-body">
+                                <h1 class="graphic-title">Acumulado</h1>
+                                <table class="table table-striped table-hover">
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Valor Acumulado</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Alimentação</td>
+                                        <td>R$ {{$expenseValues[0]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aluguel</td>
+                                        <td>R$ {{$expenseValues[1]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Condomínio</td>
+                                        <td>R$ {{$expenseValues[2]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contas</td>
+                                        <td>R$ {{$expenseValues[3]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conta de água/luz</td>
+                                        <td>R$ {{$expenseValues[4]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Combustível</td>
+                                        <td>R$ {{$expenseValues[5]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Internet</td>
+                                        <td>R$ {{$expenseValues[6]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transporte</td>
+                                        <td>R$ {{$expenseValues[7]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gerais</td>
+                                        <td>R$ {{$expenseValues[8]}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div> <!-- Tabela -->
                 </div> <!-- Análise -->
             </div>
         </div> 
@@ -205,10 +258,7 @@
         options: {
         
            y: {
-                beginAtZero: true,
-                steps: 10,
-                stepValue: 5,      
-                max: 10
+                beginAtZero: true,    
            }
       
         }
